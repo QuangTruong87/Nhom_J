@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    Route::get('', [CustomAuthController::class, 'index'])->name('login');
+Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 });
