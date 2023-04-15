@@ -7,5 +7,7 @@ use App\Http\Controllers\CustomAuthController;
 | Web Routes
 |--------------------------------------------------------------------------
 */
+
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('listofuser',[CustomAuthController::class,'listofuser'])->name('listofuser');
+Route::get('detail',[CustomAuthController::class,'detail'])->name('detail');
