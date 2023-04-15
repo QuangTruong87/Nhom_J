@@ -11,3 +11,5 @@ use App\Http\Controllers\CustomAuthController;
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('listofuser',[CustomAuthController::class,'listofuser'])->name('listofuser');
 Route::get('detail',[CustomAuthController::class,'detail'])->name('detail');
+Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
+Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
