@@ -82,21 +82,4 @@ class CustomAuthController extends Controller
         
         return redirect("login")->withErrors(['login' => 'Please login first !!!']);
     }
-
-    public function detail()
-    {
-        if(Auth::check()){
-            $users = DB::table('users')->paginate(3);
-            return view("detail",['users'=> $users]);
-        }
-        
-        return redirect("detail")->withErrors(['login' => 'Please login first !!!']);
-    }
-
-    public function signOut() {
-        Session::flush();
-        Auth::logout();
-
-        return Redirect('login');
-    }
 }
